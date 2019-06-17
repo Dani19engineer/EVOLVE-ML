@@ -1,0 +1,38 @@
+import numpy as np
+import pandas as pd
+print("dani hamdani IT super")
+contoh_data = {
+    "a": [1,2,3], 
+    "b": [4,5,6], 
+    "c": [7,8,9]
+}
+print(contoh_data)
+pd.DataFrame(contoh_data)
+
+d = np.array(contoh_data)
+print(d)
+df = pd.read_csv("cereal.csv")
+df.head()
+print(df.head)
+df.tail()
+print(df.tail)
+df.columns
+print(df.columns)
+df.index
+df.shape
+df.name.head()
+df.sugars.head(7)
+df["potass"].head()
+df[["name", "sugars", "potass"]].head()
+df[["name", "sugars", "potass"]][5:11]
+
+#Slicing with .loc dan .iloc
+#.loc = location (slicing pakai nama)
+
+#.iloc = index location (slicing pakai indeks)
+df.loc[2: 4, "sodium": "sugars"]
+df.iloc[2:5, 6:10]
+df.loc[2: 4, ["rating", "fat", "sodium"]]
+df.iloc[2: 5, [-1, 5, 6]]
+
+df.to_csv("cereal_impDNI.csv", index_label="name")
